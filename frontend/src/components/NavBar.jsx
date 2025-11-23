@@ -31,7 +31,7 @@ export default function NavBar() {
       <AppBar position="fixed" sx={{ backgroundColor: "#2e6763" }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Portfolio
+            Ahmad
           </Typography>
 
           {isMobile ? (
@@ -43,9 +43,6 @@ export default function NavBar() {
                 anchor="right"
                 open={drawerOpen}
                 onClose={toggleDrawer}
-                PaperProps={{
-                  sx: { backgroundColor: "#2cc0b6ff", color: "white" }, // background + text color
-                }}
               >
                 <div style={{ width: 250, padding: 20 }}>
                   {tabItems.map((item) => (

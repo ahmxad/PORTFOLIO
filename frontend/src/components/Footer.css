@@ -1,0 +1,10 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #2e6763;
+  color: white;
+  text-align: center;
+  z-index: 999; /* navbar se upar rahe */
+}
