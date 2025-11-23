@@ -1,0 +1,14 @@
+.Contact{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+.contact-text{
+    margin-top: 20px;
+}
+.links {
+    position: fixed;
+    bottom: 60px;
+    left: 50%; 
+    transform: translateX(-50%);
+}

@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar'
 import NavRoutes from './components/NavRoutes'
+import Footer from './components/Footer';
 import { Toolbar } from "@mui/material";
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
       <NavBar />
       <Toolbar /> 
       <NavRoutes  />
+      <Footer />
     </>
   )
 }

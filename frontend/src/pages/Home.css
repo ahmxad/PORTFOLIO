@@ -1,0 +1,25 @@
+.container-of-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+.text{
+    margin-left: 4rem;
+    flex: 2;
+}
+.img{
+    flex-wrap: wrap;
+    flex: 1;
+}
+@media (max-width: 850px) {
+  .container-of-home {
+    flex-direction: column; /* image niche aa jayegi */
+    text-align: center;     /* text bhi center aligned ho jayega */
+  }
+
+  .text {
+    margin-left: 0;         /* mobile me left margin ki zarurat nahi */
+  }
+}
