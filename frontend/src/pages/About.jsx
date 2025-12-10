@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="about">
       <div className="text">
-        <h3>About</h3>
+        <h3>About Me</h3>
         <p>
           Hi! I'm Muhammad Ahmad, a student and a big fan of computer science.
           I love exploring modern technologies, coding in JavaScript, Python, C++, and
