@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-export default function Links() {
+export default function SocialLinks() {
   return (
     <div style={{ display: "flex", gap: "15px", marginTop: "20px" }}>
       <a

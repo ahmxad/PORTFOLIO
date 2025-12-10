@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Links from "../links/Links";
+import SocialLinks from "../components/SocialLinks";
 import "./Contact.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -79,7 +79,7 @@ export default function Contact() {
           <div className="contact-info">
             <div className="social-links-wrapper">
               <h5>Connect</h5>
-              <Links />
+              <SocialLinks />
             </div>
             
             <div className="resume-section">
