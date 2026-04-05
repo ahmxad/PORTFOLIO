@@ -1,0 +1,116 @@
+.skills__categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.skills__category {
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills__category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--category-color);
+  opacity: 0.5;
+  transition: opacity var(--transition-base);
+}
+
+.skills__category:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.skills__category:hover::before {
+  opacity: 1;
+}
+
+.skills__category-name {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--category-color);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-mono);
+}
+
+.skills__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Badge — shields.io-style pill */
+.skills__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  cursor: default;
+  transition: all var(--transition-base);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills__badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--category-color);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  border-radius: inherit;
+}
+
+.skills__badge:hover {
+  border-color: var(--category-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.skills__badge:hover::before {
+  opacity: 0.08;
+}
+
+.skills__badge:focus-visible {
+  border-color: var(--category-color);
+}
+
+.skills__badge-icon {
+  font-size: var(--fs-sm);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.skills__badge-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .skills__categories {
+    grid-template-columns: 1fr;
+  }
+}

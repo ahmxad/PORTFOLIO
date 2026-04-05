@@ -1,0 +1,104 @@
+.cyber__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-3xl);
+}
+
+.cyber__card {
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-dim), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.cyber__card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cyber__card:hover::after {
+  opacity: 1;
+}
+
+.cyber__card-icon {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-md);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border-radius: var(--radius-md);
+}
+
+.cyber__card-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.cyber__card-description {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Banner */
+.cyber__banner {
+  padding: var(--space-xl) var(--space-2xl);
+  background: linear-gradient(135deg, rgba(217, 136, 106, 0.06), rgba(191, 78, 78, 0.04));
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+}
+
+.cyber__banner-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xl);
+}
+
+.cyber__banner-icon {
+  font-size: var(--fs-3xl);
+  flex-shrink: 0;
+}
+
+.cyber__banner-content h3 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.cyber__banner-content p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .cyber__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cyber__banner-content {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
