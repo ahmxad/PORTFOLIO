@@ -1,0 +1,108 @@
+.contact__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__title {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-extrabold);
+  margin-bottom: var(--space-lg);
+}
+
+.contact__description {
+  font-size: var(--fs-lg);
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-bottom: var(--space-3xl);
+  line-height: 1.7;
+}
+
+/* Social Links */
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: var(--space-3xl);
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.contact__link:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+  color: var(--text-primary);
+}
+
+.contact__link-icon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.contact__link-name {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-base);
+  flex: 1;
+  text-align: left;
+}
+
+.contact__link-arrow {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  font-size: var(--fs-lg);
+}
+
+.contact__link:hover .contact__link-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* CTA */
+.contact__cta {
+  margin-top: var(--space-md);
+}
+
+.contact__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 16px 40px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+}
+
+.contact__btn:hover {
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+@media (max-width: 480px) {
+  .contact__links {
+    max-width: 100%;
+  }
+}
