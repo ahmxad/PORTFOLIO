@@ -14,7 +14,7 @@ export default function About() {
       <div className="about__grid">
         <div className="about__text reveal reveal-delay-1">
           <p>
-            I'm a software developer with a deep curiosity for how things work — and how they break.
+            I'm a Web developer with a deep curiosity for how things work — and how they break.
             My journey started with writing simple scripts and has evolved into building full-stack
             web applications and exploring the fascinating world of cybersecurity.
           </p>

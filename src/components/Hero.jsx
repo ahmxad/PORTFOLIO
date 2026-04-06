@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import profileImg from '../assets/profile.jpeg';
 import './Hero.css';
 
-const roles = ['Software Developer', 'Cybersecurity Enthusiast', 'Problem Solver', 'Lifelong Learner'];
+const roles = ['Web Developer', 'Cybersecurity Enthusiast', 'Problem Solver', 'Lifelong Learner'];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -63,7 +63,7 @@ export default function Hero() {
 
         <div className="hero__portrait" style={{ animationDelay: '0.6s' }}>
           <div className="hero__portrait-frame">
-            <img src={profileImg} alt="Ahmad — Software Developer" className="hero__portrait-img" />
+            <img src={profileImg} alt="Ahmad — Web Developer" className="hero__portrait-img" />
           </div>
           <div className="hero__portrait-accent" aria-hidden="true"></div>
         </div>

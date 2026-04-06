@@ -12,11 +12,11 @@
   --crimson: #BF4E4E;
 
   /* Backgrounds */
-  --bg-primary: #111C2A;
-  --bg-secondary: #1D2C40;
-  --bg-card: rgba(29, 44, 64, 0.55);
-  --bg-card-hover: rgba(29, 44, 64, 0.8);
-  --bg-glass: rgba(29, 44, 64, 0.4);
+  --bg-primary: #000000;
+  --bg-secondary: #080808;
+  --bg-card: rgba(20, 20, 20, 0.6);
+  --bg-card-hover: rgba(30, 30, 30, 0.8);
+  --bg-glass: rgba(10, 10, 10, 0.5);
 
   /* Borders */
   --border-subtle: rgba(217, 136, 106, 0.1);
