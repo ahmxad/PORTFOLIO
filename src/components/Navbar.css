@@ -12,7 +12,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(17, 28, 42, 0.9);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--border-subtle);
@@ -129,7 +129,7 @@
     justify-content: center;
     gap: var(--space-sm);
     padding: var(--space-2xl);
-    background: rgba(17, 28, 42, 0.97);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-left: 1px solid var(--border-subtle);
