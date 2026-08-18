@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+/* ============================================================
+   AHMAD — RETRO ADVERTISING / TELEVISION-TITLE DESIGN SYSTEM
+   Tailwind v4 theme tokens
+   ============================================================ */
+@theme {
+  /* --- Core palette: warm, retro, advertising --- */
+  --color-ink: #080808;          /* near-black background / contrast */
+  --color-ink-soft: #161310;     /* slightly lifted black panels */
+  --color-ink-2: #221d18;        /* warm dark brown-black */
+  --color-truered: #c8102e;      /* deep dramatic red */
+  --color-red: #e51b23;          /* primary red accent */
+  --color-signyellow: #ffd400;   /* signature yellow */
+  --color-gold: #ffc400;         /* deep yellow */
+  --color-cream: #fff8e7;        /* warm off-white */
+  --color-paper: #f5f1e6;        /* warm paper */
+  --color-beige: #e8dfc8;        /* muted beige */
+  --color-warmgray: #6b6155;     /* warm gray */
+  --color-olive: #6b6b3a;        /* desaturated olive */
+  --color-brown: #3a2a1a;        /* dark brown */
+  --color-fadeorange: #c4622d;   /* faded orange */
+
+  /* --- Typography system --- */
+  --font-display: "Anton", "Arial Narrow Bold", Impact, sans-serif;
+  --font-head: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --font-script: "Permanent Marker", "Comic Sans MS", cursive;
+  --font-type: "Special Elite", "Courier New", monospace;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-signyellow);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-signyellow);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-red);
+  border: 2px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-signyellow);
+}
+
+/* ============================================================
+   TYPOGRAPHY HELPERS
+   ============================================================ */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+.font-head {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+}
+.font-type {
+  font-family: var(--font-type);
+  letter-spacing: 0.04em;
+}
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Big, expressive display scale. Tuned to feel dominant, not tiny. */
+.display-mega {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 19vw, 17rem);
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 9vw, 7rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   RETRO SIGN GLOW  (warm, illuminated advertising — NOT neon)
+   ============================================================ */
+.glow-red {
+  /* yellow halo around red lettering */
+  text-shadow:
+    0 0 2px rgba(255, 196, 0, 0.55),
+    0 0 14px rgba(255, 196, 0, 0.45),
+    0 0 34px rgba(229, 27, 35, 0.55),
+    3px 3px 0 var(--color-ink);
+}
+.glow-yellow {
+  /* red halo around yellow lettering */
+  text-shadow:
+    0 0 2px rgba(229, 27, 35, 0.5),
+    0 0 16px rgba(229, 27, 35, 0.45),
+    0 0 42px rgba(255, 212, 0, 0.4),
+    3px 3px 0 var(--color-ink);
+}
+.glow-cream {
+  text-shadow:
+    0 0 4px rgba(255, 212, 0, 0.35),
+    0 0 20px rgba(229, 27, 35, 0.35),
+    3px 3px 0 var(--color-ink);
+}
+
+/* Offset print shadow — the misregistered "tacky ad" look */
+.print-offset {
+  text-shadow: 4px 4px 0 var(--color-ink);
+}
+.print-offset-yellow {
+  text-shadow: 4px 4px 0 var(--color-signyellow);
+}
+
+/* ============================================================
+   TEXTURE / ATMOSPHERE
+   ============================================================ */
+
+/* Subtle paper / film grain via inline SVG (no binary asset) */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+/* Halftone dot field for printed-ad feel */
+.halftone {
+  background-image: radial-gradient(var(--color-ink) 1px, transparent 1.4px);
+  background-size: 7px 7px;
+}
+
+/* VHS scanlines + soft flicker. Sits above content, never blocks clicks. */
+.vhs-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+.vhs-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0) 40%,
+    rgba(0, 0, 0, 0.04)
+  );
+  animation: vhs-flicker 7s steps(60) infinite;
+}
+
+@keyframes vhs-flicker {
+  0%, 92%, 100% { opacity: 0.5; }
+  93% { opacity: 0.32; }
+  95% { opacity: 0.62; }
+  97% { opacity: 0.4; }
+}
+
+/* Selective chromatic misregistration on a target element */
+.chroma {
+  position: relative;
+}
+.chroma::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--color-red);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  transform: translateX(1px);
+  z-index: -1;
+}
+.chroma::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  top: 0;
+  color: var(--color-signyellow);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  transform: translateX(-1px);
+  z-index: -1;
+}
+
+/* ============================================================
+   RETRO COMPONENTS
+   ============================================================ */
+.stamp {
+  display: inline-block;
+  background: var(--color-red);
+  color: var(--color-cream);
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  font-size: 0.72rem;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+.stamp-yellow {
+  background: var(--color-signyellow);
+  color: var(--color-ink);
+}
+
+.file-border {
+  border: 3px dashed var(--color-warmgray);
+}
+
+.rule-red {
+  height: 6px;
+  background: var(--color-red);
+}
+.rule-yellow {
+  height: 6px;
+  background: var(--color-signyellow);
+}
+
+.btn-retro {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  cursor: pointer;
+}
+.btn-retro:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+.btn-retro:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.tape::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 86px;
+  height: 22px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 212, 0, 0.55);
+  border: 1px dashed rgba(8, 8, 8, 0.4);
+}
+
+/* ============================================================
+   PAGE TRANSITION CURTAIN
+   ============================================================ */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  transform: scaleY(0);
+  transform-origin: top;
+  background: var(--color-signyellow);
+}
+.curtain::after {
+  content: "AHMAD";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 14vw, 12rem);
+  color: var(--color-red);
+  text-shadow: 4px 4px 0 var(--color-ink);
+  opacity: 0;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .vhs-overlay { opacity: 0.35; }
+}
+
+.reveal-hidden {
+  opacity: 0;
+}
+/* ============================================================
+   SIGN / TITLE ANIMATIONS
+   ============================================================ */
+@keyframes sign-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.35))
+            drop-shadow(0 0 22px rgba(229, 27, 35, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 196, 0, 0.6))
+            drop-shadow(0 0 38px rgba(229, 27, 35, 0.6));
+  }
+}
+.animate-sign-pulse {
+  animation: sign-pulse 3.4s ease-in-out infinite;
+}
+
+/* Imperfect edge jitter — the "slightly tacky" analog behavior */
+@keyframes tape-jitter {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(-0.5px); }
+  80% { transform: translateX(0.5px); }
+}
+.animate-tape-jitter {
+  animation: tape-jitter 5s steps(8) infinite;
+}
+
+/* Slow marquee for broadcast ticker */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker 22s linear infinite;
+}
+
+/* Page entrance helper used by GSAP-choreographed pages */
+.page-enter {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+
