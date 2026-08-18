@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#080808"/>
+  <rect x="6" y="6" width="52" height="52" fill="none" stroke="#FFD400" stroke-width="3"/>
+  <text x="32" y="46" font-family="Anton, Impact, sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#E51B23">A</text>
+  <text x="33" y="47" font-family="Anton, Impact, sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#FFF8E7" opacity="0.18">A</text>
+</svg>
