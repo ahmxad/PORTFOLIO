@@ -70,8 +70,7 @@ export default function Skills() {
         </div>
 
         <p data-anim className="mt-5 max-w-2xl font-body text-base leading-relaxed text-ink-2">
-          No percentages. No fake “expert” bars. Just the tools, grouped by the
-          work they do — exactly as they sit in the actual stack.
+          No percentages. No fake “expert” bars. Just the tools I use and believe me the list is expanding day by day.
         </p>
 
         <div className="mt-6">

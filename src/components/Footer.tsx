@@ -7,7 +7,7 @@ const TICKER = [
   "MERN",
   "CERTIFIED ETHICAL HACKING (CEH)",
   "Ruby on Rails",
-  "Python - JS - Ruby",
+  "QucikBooks Bookkeeper",
 ];
 
 export default function Footer() {
@@ -47,8 +47,7 @@ export default function Footer() {
         </nav>
 
         <div className="font-type text-xs leading-relaxed text-warmgray">
-          <div className="text-signyellow">{BRAND.contactPhrase}</div>
-          <div className="mt-1">CH.07 · RETRO BROADCAST</div>
+          <div className="text-signyellow">Better Call Ahmad</div>
           <div>© {new Date().getFullYear()} AHMAD</div>
         </div>
       </div>

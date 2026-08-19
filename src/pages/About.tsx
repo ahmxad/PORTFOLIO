@@ -33,7 +33,7 @@ export default function About() {
                 </div>
               </div>
               <p className="mt-3 text-center font-head text-xs tracking-[0.2em] text-warmgray">
-                FILE PHOTO — STYLIZED
+                FILE PHOTO
               </p>
             </div>
 
