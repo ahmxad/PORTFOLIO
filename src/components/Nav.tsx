@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAV_ITEMS, BRAND } from "../data/content";
-import { useSound } from "../lib/sound";
 
 function NavItemButton({
   to,
@@ -12,13 +11,10 @@ function NavItemButton({
   label: string;
   onClick?: () => void;
 }) {
-  const { play } = useSound();
   return (
     <NavLink
       to={to}
       onClick={onClick}
-      onMouseEnter={() => play("hover")}
-      onMouseDown={() => play("click")}
       className={({ isActive }) =>
         [
           "group relative px-3 py-2 font-head text-sm tracking-[0.16em] transition-colors",
@@ -45,7 +41,6 @@ function NavItemButton({
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const { play } = useSound();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -53,8 +48,6 @@ export default function Nav() {
       <div className="flex items-center justify-between border-b-2 border-ink bg-ink px-4 py-2">
         <Link
           to="/"
-          onMouseEnter={() => play("hover")}
-          onMouseDown={() => play("click")}
           className="flex items-baseline gap-2 select-none"
           aria-label="Ahmad — home"
         >
@@ -79,8 +72,6 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <Link
             to="/contact"
-            onMouseEnter={() => play("hover")}
-            onMouseDown={() => play("click")}
             className="hidden sm:inline-block btn-retro bg-red px-3 py-2 text-xs text-cream"
           >
             {BRAND.contactPhrase}
@@ -90,10 +81,7 @@ export default function Nav() {
             className="lg:hidden btn-retro bg-signyellow px-3 py-2 text-ink text-sm"
             aria-expanded={open}
             aria-label="Toggle menu"
-            onClick={() => {
-              play("click");
-              setOpen((o) => !o);
-            }}
+            onClick={() => setOpen((o) => !o)}
           >
             {open ? "CLOSE" : "MENU"}
           </button>
@@ -108,10 +96,7 @@ export default function Nav() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                onClick={() => {
-                  play("click");
-                  setOpen(false);
-                }}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   [
                     "border-b border-ink-soft px-4 py-3 font-head text-base tracking-[0.14em]",
