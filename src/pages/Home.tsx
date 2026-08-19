@@ -9,7 +9,6 @@ import ThreeBackground from "../components/ThreeBackground";
 
 const QUICK = [
   { label: "Enter Site", to: "/about", kind: "red" as const },
-  { label: "Projects", to: "/projects", kind: "yellow" as const },
   { label: "Contact", to: "/contact", kind: "outline" as const },
 ];
 
@@ -162,9 +161,7 @@ export default function Home() {
                   "btn-retro px-6 py-3 text-sm",
                   q.kind === "red"
                     ? "bg-red text-cream"
-                    : q.kind === "yellow"
-                      ? "bg-signyellow text-ink"
-                      : "bg-transparent text-cream",
+                    : "bg-transparent text-cream",
                 ].join(" ")}
               >
                 {q.label} →

@@ -18,7 +18,6 @@ export type NavItem = { label: string; to: string };
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Projects", to: "/projects" },
   { label: "Skills", to: "/skills" },
   { label: "Experience", to: "/experience" },
   { label: "Education", to: "/education" },
@@ -163,16 +162,7 @@ export const EXPERIENCE_PLACEHOLDER = {
   heading: "Case History",
   status: "FILE OPEN — RECORD PENDING",
   body:
-    "No professional engagements have been logged yet. The work so far is coursework and self-initiated builds, which live under Projects. When real roles begin, they’ll be filed here — in order, with dates.",
-} as const;
-
-// No real project details provided. Projects page shows a
-// sophisticated placeholder system rather than invented case studies.
-export const PROJECTS_PLACEHOLDER = {
-  heading: "Selected Cases",
-  status: "CLASSIFIED — DETAILS PENDING",
-  note:
-    "Case files open as real, shipped work becomes available. Nothing here is invented.",
+    "No professional engagements have been logged yet. The work so far is coursework and self-initiated builds. When real roles begin, they’ll be filed here — in order, with dates.",
 } as const;
 
 export const CONTACT = {
