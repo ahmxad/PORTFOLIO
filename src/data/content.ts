@@ -182,6 +182,7 @@ export const CONTACT = {
     { label: "Email", value: "misterlaptop136@gmail.com", href: "mailto:misterlaptop136@gmail.com" },
     { label: "GitHub", value: "ahmxad", href: "https://github.com/ahmxad" },
     { label: "Instagram", value: "axxhmad", href: "https://www.instagram.com/axxhmad" },
+    { label: "Discord", value: "ahmad909x", href: "https://discord.com/users/ahmad909x" },
   ],
 } as const;
 
