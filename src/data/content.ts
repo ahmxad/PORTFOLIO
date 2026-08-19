@@ -27,21 +27,22 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const ABOUT = {
   name: "Ahmad",
-  role: "Full-Stack Web Developer · CS Undergraduate",
+  role: "Full-Stack Web Developer · CS Undergraduate · QuickBooks Bookkeeper",
   intro:
-    "I’m a Computer Science undergraduate and a web developer who builds full-stack applications with the MERN stack — MongoDB, Express.js, React.js and Node.js. I also ship backend services with Ruby on Rails and work with relational data using SQL.",
+    "I’m a Computer Science undergraduate and a web developer who builds full-stack applications with the Ruby on Rails and MERN stack. Alongside development, I work as a QuickBooks bookkeeper, across both QuickBooks Online and Desktop.",
   paragraphs: [
-    "I write JavaScript, Python, Ruby and C++, and I care about how an API is shaped as much as how a page looks. Most of what I’ve built so far comes from coursework and projects I started on my own — small ideas taken all the way to something that actually runs.",
-    "Recently I completed my Certified Ethical Hacking (CEH) training, sponsored by NAVTTC. That changed how I approach building: I now think about where things break before I think about where they shine. Security isn’t a final step for me — it’s part of the first sketch.",
-    "I like work that is legible. Code I can explain, interfaces I can defend, and systems I can reason about under pressure. I’m still early in the career, but I finish what I start.",
+    "I write JavaScript, Python, Ruby, C++ and Rust, every language teaches different concepts. I started on my own and most of my working is based on my interests.",
+    "Recently I completed my Certified Ethical Hacking (CEH) training from TecPhantom institute Lahore, sponsored by NAVTCC. That changed how I approach building websites.",
+    "Besides I'm a QuickBooks Bookkeeper. I record transactions, Cheques, Credits, manage accounts and do Reconciliations.",
+    "I am a big fan of technology, I've solved a lot of coding problems on Codwars, LeetCode and I completed 100+ rooms on TryHackMe.",
   ],
   interests: [
     "Full-stack web applications",
-    "RESTful API design",
-    "NoSQL & relational data modeling",
-    "Ethical hacking & defensive thinking",
-    "Linux as a daily driver",
-    "Type-driven, readable code",
+    "Ruby on Rails",
+    "SQL and NoSQL both",
+    "Ethical hacking",
+    "Linux (Arch btw)",
+    "QuickBooks Bookkeeping",
   ],
 } as const;
 
@@ -57,14 +58,14 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "frontend",
     title: "Frontend Development",
-    blurb: "What the visitor actually touches.",
+    blurb: "Impressing the clients",
     items: [
       "React.js",
       "JavaScript",
       "Figma",
       "Hotwire",
       "Tailwind CSS",
-      "Responsive Web Design",
+      "Mobile first approach",
     ],
   },
   {
@@ -124,6 +125,24 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { label: "Desktop", items: ["KDE Plasma"] },
     ],
   },
+  {
+    id: "bookkeeping",
+    title: "Bookkeeping & Accounting",
+    blurb: "Keeping the numbers honest.",
+    items: [
+      "Transaction Recording",
+      "Accounts Management",
+      "Financial Reporting",
+      "Bank Reconciliation",
+      "Cheque & Credit Entry",
+    ],
+    sub: [
+      {
+        label: "QuickBooks",
+        items: ["QuickBooks Online", "QuickBooks Desktop"],
+      },
+    ],
+  },
 ];
 
 export type EducationRecord = {
@@ -160,9 +179,9 @@ export const CERTIFICATION = {
 // elegant, clearly-marked empty state instead of fabricated roles.
 export const EXPERIENCE_PLACEHOLDER = {
   heading: "Case History",
-  status: "FILE OPEN — RECORD PENDING",
+  status: "LEDGER ACTIVE — BOOKKEEPING ON FILE",
   body:
-    "No professional engagements have been logged yet. The work so far is coursework and self-initiated builds. When real roles begin, they’ll be filed here — in order, with dates.",
+    "The active, day-to-day practice right now is bookkeeping. I record transactions, manage accounts, enter cheques and credits, run bank reconciliations and prepare the financial reports clients actually read — fluent in both QuickBooks Online and Desktop. Formal development roles are still to come; when they begin, they’ll be filed here — in order, with dates.",
 } as const;
 
 export const CONTACT = {
