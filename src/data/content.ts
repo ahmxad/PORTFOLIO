@@ -22,6 +22,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Education", to: "/education" },
   { label: "Certification", to: "/certification" },
   { label: "Contact", to: "/contact" },
+  { label: "More", to: "/more" },
 ];
 
 export const ABOUT = {
@@ -183,6 +184,30 @@ export const CONTACT = {
     { label: "Instagram", value: "axxhmad", href: "https://www.instagram.com/axxhmad" },
   ],
 } as const;
+
+export type Interest = {
+  id: string;
+  title: string;
+  category: string;
+  size: "lg" | "md" | "sm";
+  tagline?: string;
+};
+
+// Ahmad's personal interests & hobbies — used by the /more page.
+// No fabricated personal claims; names + categories only.
+export const INTERESTS: Interest[] = [
+  { id: "chess", title: "Chess", category: "Games & Challenges", size: "lg" },
+  { id: "ctf", title: "CTF Challenges", category: "Games & Challenges", size: "lg" },
+  { id: "cricket", title: "Cricket", category: "Sports", size: "md" },
+  { id: "football", title: "Football", category: "Sports", size: "md" },
+  { id: "traveling", title: "Traveling", category: "Exploration & World", size: "md" },
+  { id: "geography", title: "Geography", category: "Exploration & World", size: "md" },
+  { id: "flags", title: "Flags / Countries", category: "Exploration & World", size: "md" },
+  { id: "reading", title: "Reading", category: "Culture & Entertainment", size: "md" },
+  { id: "movies", title: "Movies / Series", category: "Culture & Entertainment", size: "lg" },
+  { id: "anime", title: "Anime", category: "Culture & Entertainment", size: "sm" },
+  { id: "politics", title: "Politics", category: "Curiosity & Technology", size: "sm" },
+];
 
 // Audio asset map. Files are optional; the sound system no-ops if absent.
 export const AUDIO_FILES: Record<string, string> = {

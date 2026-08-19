@@ -17,6 +17,7 @@ import Skills from "./pages/Skills";
 import Education from "./pages/Education";
 import Certification from "./pages/Certification";
 import Contact from "./pages/Contact";
+import More from "./pages/More";
 
 import { useSmoothScroll, getLenis } from "./lib/useSmoothScroll";
 import { gsap, prefersReducedMotion } from "./lib/gsap";
@@ -76,6 +77,7 @@ export default function App() {
         <Route path="/education" element={<Education />} />
         <Route path="/certification" element={<Certification />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/more" element={<More />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
