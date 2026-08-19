@@ -5,7 +5,7 @@ import ahmad from "../assets/ahmad.png";
 
 export default function About() {
   return (
-    <Page title="Ahmad — About" className="bg-paper text-ink" pad="pt-28 pb-20">
+    <Page title="About" className="bg-paper text-ink" pad="pt-28 pb-20">
       <div className="mx-auto max-w-6xl px-5">
         {/* file header */}
         <div data-anim className="flex flex-wrap items-end justify-between gap-3 border-b-4 border-ink pb-3">
@@ -20,7 +20,7 @@ export default function About() {
           <div className="flex flex-col">
             <div data-anim className="relative">
               <div className="relative border-4 border-ink bg-ink p-4 shadow-[8px_8px_0_var(--color-red)]">
-                <div className="grain halftone flex aspect-[4/5] items-center justify-center overflow-hidden bg-ink">
+                <div className="grain halftone flex aspect-4/5 items-center justify-center overflow-hidden bg-ink">
                   <img
                     src={ahmad}
                     alt="Ahmad"

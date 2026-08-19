@@ -19,7 +19,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Skills", to: "/skills" },
-  { label: "Experience", to: "/experience" },
   { label: "Education", to: "/education" },
   { label: "Certification", to: "/certification" },
   { label: "Contact", to: "/contact" },
@@ -164,7 +163,7 @@ export const EDUCATION: EducationRecord[] = [
     institution: "Ghazali College, Lahore",
     credential: "F.Sc Pre-Medical",
     location: "Lahore",
-    date: "—",
+    date: "2021 - 2023",
   },
 ];
 
@@ -172,25 +171,16 @@ export const CERTIFICATION = {
   title: "Certified Ethical Hacking (CEH)",
   sponsor: "Sponsored by NAVTTC",
   note:
-    "Completed formal CEH training. This is a certification in ethical hacking practice — not a claim of professional cybersecurity employment.",
-} as const;
-
-// No professional history provided. Experience page renders an
-// elegant, clearly-marked empty state instead of fabricated roles.
-export const EXPERIENCE_PLACEHOLDER = {
-  heading: "Case History",
-  status: "LEDGER ACTIVE — BOOKKEEPING ON FILE",
-  body:
-    "The active, day-to-day practice right now is bookkeeping. I record transactions, manage accounts, enter cheques and credits, run bank reconciliations and prepare the financial reports clients actually read — fluent in both QuickBooks Online and Desktop. Formal development roles are still to come; when they begin, they’ll be filed here — in order, with dates.",
+    "Completed formal CEH training. This is a certification in ethical hacking practice and not a claim of professional cybersecurity employment.",
 } as const;
 
 export const CONTACT = {
   phrase: "CALL THE DEVELOPER",
-  sub: "No real contact handles were provided. Use the desk below, or reach out directly and details can be shared.",
+  sub: "Reach me through the provided links. I'd love to discuss any queries.",
   channels: [
-    { label: "Email", value: "Available on request", href: null },
-    { label: "GitHub", value: "Handle pending", href: null },
-    { label: "LinkedIn", value: "Profile pending", href: null },
+    { label: "Email", value: "misterlaptop136@gmail.com", href: "mailto:misterlaptop136@gmail.com" },
+    { label: "GitHub", value: "ahmxad", href: "https://github.com/ahmxad" },
+    { label: "Instagram", value: "axxhmad", href: "https://www.instagram.com/axxhmad" },
   ],
 } as const;
 

@@ -4,7 +4,7 @@ import { CERTIFICATION } from "../data/content";
 export default function Certification() {
   return (
     <Page
-      title="Ahmad — Certification"
+      title="Certification"
       className="bg-ink text-cream"
       pad="pt-28 pb-20"
     >
@@ -54,12 +54,6 @@ export default function Certification() {
           {/* signature line */}
           <div className="relative mt-8 flex flex-wrap items-end gap-10">
             <div>
-              <div className="h-px w-40 bg-cream/60" />
-              <span className="font-type text-[10px] tracking-[0.2em] text-warmgray">
-                CANDIDATE
-              </span>
-            </div>
-            <div>
               <div className="font-script text-3xl text-signyellow">NAVTTC</div>
               <span className="font-type text-[10px] tracking-[0.2em] text-warmgray">
                 SPONSOR SEAL
@@ -72,7 +66,7 @@ export default function Certification() {
           data-anim
           className="mt-8 font-type text-xs tracking-[0.2em] text-warmgray"
         >
-          ★ ONE CREDENTIAL · STATED ACCURATELY · NO EMBELLISHMENT
+          ★ ONE CREDENTIAL
         </p>
       </div>
     </Page>

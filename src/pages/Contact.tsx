@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import Page from "../components/Page";
 import { CONTACT } from "../data/content";
 import { useSound } from "../lib/sound";
@@ -7,14 +7,14 @@ export default function Contact() {
   const { play } = useSound();
   const [sent, setSent] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     play("transition");
     setSent(true);
   };
 
   return (
-    <Page title="Ahmad — Contact" className="bg-red text-cream" pad="pt-28 pb-20">
+    <Page title="Contact" className="bg-red text-cream" pad="pt-28 pb-20">
       <div className="mx-auto max-w-5xl px-5">
         {/* broadcast banner */}
         <div data-anim className="flex flex-wrap items-end justify-between gap-3 border-b-4 border-ink pb-3">
@@ -35,7 +35,9 @@ export default function Contact() {
               CHANNELS
             </h2>
             <ul className="mt-4 space-y-3">
-              {CONTACT.channels.map((c) => (
+              {CONTACT.channels.map((c) => {
+                const href = c.href ?? undefined;
+                return (
                 <li
                   key={c.label}
                   className="flex items-center justify-between border-b border-ink-soft pb-2"
@@ -43,14 +45,26 @@ export default function Contact() {
                   <span className="font-head text-xs tracking-[0.2em] text-cream">
                     {c.label}
                   </span>
-                  <span className="font-type text-xs text-signyellow">
-                    {c.value}
-                  </span>
+                  {href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-type text-xs text-signyellow underline-offset-2 hover:underline"
+                    >
+                      {c.value}
+                    </a>
+                  ) : (
+                    <span className="font-type text-xs text-signyellow">
+                      {c.value}
+                    </span>
+                  )}
                 </li>
-              ))}
+                );
+              })}
             </ul>
             <p className="mt-5 font-type text-[10px] tracking-[0.15em] text-warmgray">
-              ★ REAL HANDLES ADDED WHEN SHARED · NOTHING FABRICATED
+              ★ My replies are fast, trust me
             </p>
           </div>
 
@@ -62,11 +76,10 @@ export default function Contact() {
             {sent ? (
               <div className="mt-6 border-2 border-ink bg-signyellow p-4">
                 <p className="font-head text-sm tracking-[0.1em] text-ink">
-                  ▣ TRANSMISSION LOGGED (DEMO)
+                  ▣ Thanks for trying to contact
                 </p>
                 <p className="mt-2 font-body text-sm text-ink-2">
-                  This is a front-end demo — no message actually left the browser.
-                  Use the channels above for a real reach-out.
+                  Sorry this form doesn't work. It's just a frontend website. I haven't attached any backend yet. Hosting is expensive gng.
                 </p>
               </div>
             ) : (
