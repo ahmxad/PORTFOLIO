@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NAV_ITEMS, BRAND } from "../data/content";
+import { NAV_ITEMS } from "../data/content";
 
 const TICKER = [
   "THE AHMAD PORTFOLIO",
@@ -7,7 +7,7 @@ const TICKER = [
   "MERN",
   "CERTIFIED ETHICAL HACKING (CEH)",
   "Ruby on Rails",
-  "QucikBooks Bookkeeper",
+  "QuickBooks Bookkeeper",
 ];
 
 export default function Footer() {

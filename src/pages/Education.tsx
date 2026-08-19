@@ -4,7 +4,7 @@ import { EDUCATION } from "../data/content";
 export default function Education() {
   return (
     <Page
-      title="Ahmad — Education"
+      title="Education"
       className="bg-paper text-ink"
       pad="pt-28 pb-20"
     >
@@ -17,8 +17,7 @@ export default function Education() {
         </div>
 
         <p data-anim className="mt-5 max-w-2xl font-body text-base leading-relaxed text-ink-2">
-          The paper trail. Dates and institutions exactly as recorded — nothing
-          added, nothing rounded up.
+          Completed my intermediate education and currently pursuing undergraduate studies.
         </p>
 
         <ol className="relative mt-10 border-l-4 border-red pl-8">

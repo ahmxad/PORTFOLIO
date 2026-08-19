@@ -14,7 +14,6 @@ import SoundToggle from "./components/SoundToggle";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
-import Experience from "./pages/Experience";
 import Education from "./pages/Education";
 import Certification from "./pages/Certification";
 import Contact from "./pages/Contact";
@@ -74,7 +73,6 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
-        <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />
         <Route path="/certification" element={<Certification />} />
         <Route path="/contact" element={<Contact />} />
@@ -99,7 +97,7 @@ export default function App() {
       </div>
 
       {/* persistent sound control */}
-      <div className="fixed bottom-4 right-4 z-[55]">
+      <div className="fixed bottom-4 right-4 z-55">
         <SoundToggle />
       </div>
     </div>

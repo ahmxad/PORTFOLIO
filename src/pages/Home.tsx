@@ -142,11 +142,7 @@ export default function Home() {
             data-stagger
             className="mt-3 max-w-xl font-body text-sm text-beige sm:text-base"
           >
-            Full-stack web developer. Computer Science undergraduate. CEH-certified
-            in ethical hacking. I also keep books as a QuickBooks bookkeeper —
-            recording transactions, reconciling accounts and preparing reports in
-            both QuickBooks Online and Desktop. This is the title sequence — pick a
-            channel and go deeper.
+            Full-stack web developer. Computer Science undergraduate. CEH-certified. QuickBooks Bookkeeper
           </div>
 
           <div
