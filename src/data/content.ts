@@ -210,11 +210,3 @@ export const INTERESTS: Interest[] = [
   { id: "politics", title: "Politics", category: "Curiosity & Technology", size: "sm" },
 ];
 
-// Audio asset map. Files are optional; the sound system no-ops if absent.
-export const AUDIO_FILES: Record<string, string> = {
-  hover: "/audio/ui-hover.mp3",
-  click: "/audio/ui-click.mp3",
-  navigation: "/audio/navigation.mp3",
-  transition: "/audio/transition.mp3",
-  title: "/audio/title-reveal.mp3",
-};

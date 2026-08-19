@@ -8,68 +8,47 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { AUDIO_FILES } from "../data/content";
 
-type SoundName = keyof typeof AUDIO_FILES;
+// Looping background music, gated by a single mute toggle so the existing
+// sound on/off button controls it.
+const BGM_SRC = "/audio/bg-music.mp3";
 
 interface SoundApi {
-  play: (name: SoundName) => void;
   muted: boolean;
   toggleMuted: () => void;
-  /** Whether at least one audio file has been proven to exist. */
-  available: boolean;
 }
 
 const SoundContext = createContext<SoundApi | null>(null);
 
-// Audio assets are optional. The build must NOT break if the /audio
-// files are absent. We lazily create <audio> elements and silently
-// swallow load/play errors so the rest of the site works untouched.
+// The audio asset is optional: the build must not break if the file is
+// absent. We lazily create the <audio> element and silently swallow
+// load/play errors so the rest of the site works untouched.
 export function SoundProvider({ children }: { children: ReactNode }) {
-  // Default to muted (opt-in) so we never surprise visitors with autoplay.
-  const [muted, setMuted] = useState(true);
-  const [available, setAvailable] = useState(false);
-  const cache = useRef<Map<SoundName, HTMLAudioElement>>(new Map());
+  // Default ON: background music greets visitors. It can only actually
+  // start after the first user gesture (browser autoplay policy).
+  const [muted, setMuted] = useState(false);
+  const [gestured, setGestured] = useState(false);
+  const bgmRef = useRef<HTMLAudioElement | null>(null);
 
-  const getEl = useCallback((name: SoundName) => {
-    const existing = cache.current.get(name);
-    if (existing) return existing;
-    const el = new Audio(AUDIO_FILES[name]);
+  // Lazily create the single looping background-music element.
+  const getBgm = useCallback(() => {
+    if (bgmRef.current) return bgmRef.current;
+    const el = new Audio(BGM_SRC);
+    el.loop = true;
     el.preload = "auto";
-    el.volume = 0.5;
-    el.addEventListener(
-      "canplaythrough",
-      () => setAvailable(true),
-      { once: true },
-    );
+    el.volume = 0.4;
     el.addEventListener("error", () => {
       /* file missing — ignore */
     });
-    cache.current.set(name, el);
+    bgmRef.current = el;
     return el;
   }, []);
 
-  const play = useCallback(
-    (name: SoundName) => {
-      if (muted) return;
-      // Respect browser autoplay policy: only play after a user gesture.
-      if (typeof window !== "undefined" && !windowHasGesture()) return;
-      try {
-        const el = getEl(name);
-        el.currentTime = 0;
-        const p = el.play();
-        if (p) p.catch(() => {});
-      } catch {
-        /* no-op */
-      }
-    },
-    [muted, getEl],
-  );
-
   const toggleMuted = useCallback(() => setMuted((m) => !m), []);
 
+  // Track the first genuine user gesture (required for audio autoplay).
   useEffect(() => {
-    const onFirst = () => setGesture(true);
+    const onFirst = () => setGestured(true);
     window.addEventListener("pointerdown", onFirst, { once: true });
     window.addEventListener("keydown", onFirst, { once: true });
     return () => {
@@ -78,23 +57,39 @@ export function SoundProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Start/stop the looping background music in lock-step with the mute
+  // toggle. It begins automatically on the visitor's first gesture (browser
+  // autoplay policy), and pauses when the tab is hidden.
+  useEffect(() => {
+    const bgm = getBgm();
+    const sync = () => {
+      if (muted || document.hidden || !gestured) {
+        bgm.pause();
+      } else {
+        const p = bgm.play();
+        if (p) p.catch(() => {});
+      }
+    };
+    sync();
+    const onVis = () => {
+      if (document.hidden) bgm.pause();
+      else if (!muted && gestured) {
+        const p = bgm.play();
+        if (p) p.catch(() => {});
+      }
+    };
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, [muted, gestured, getBgm]);
+
   const value = useMemo<SoundApi>(
-    () => ({ play, muted, toggleMuted, available }),
-    [play, muted, toggleMuted, available],
+    () => ({ muted, toggleMuted }),
+    [muted, toggleMuted],
   );
 
   return (
     <SoundContext.Provider value={value}>{children}</SoundContext.Provider>
   );
-}
-
-// Track the first genuine user gesture (required for audio autoplay).
-let gestured = false;
-function setGesture(v: boolean) {
-  gestured = v;
-}
-function windowHasGesture() {
-  return gestured;
 }
 
 export function useSound(): SoundApi {

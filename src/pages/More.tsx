@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Page from "../components/Page";
 import { INTERESTS } from "../data/content";
-import { useSound } from "../lib/sound";
 
 /* ------------------------------------------------
    Per-interest decorative motif (CSS-drawn, no images,
@@ -259,8 +258,6 @@ const TITLE: Record<string, string> = {
 };
 
 export default function More() {
-  const { play } = useSound();
-
   return (
     <Page title="More" className="bg-cream text-ink" pad="pt-28 pb-20">
       <div className="mx-auto max-w-6xl px-5">
@@ -305,7 +302,6 @@ export default function More() {
               <article
                 key={it.id}
                 data-anim
-                onMouseEnter={() => play("hover")}
                 className={`group relative flex min-w-0 flex-col justify-between border-4 border-ink p-4 shadow-[8px_8px_0_var(--color-ink)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--color-ink)] ${surface} ${span}`}
               >
                 <div className="flex min-w-0 items-start justify-between gap-2">
@@ -345,8 +341,6 @@ export default function More() {
           </p>
           <Link
             to="/contact"
-            onMouseEnter={() => play("hover")}
-            onMouseDown={() => play("click")}
             className="btn-retro mt-4 inline-block bg-ink px-6 py-3 text-sm text-cream"
           >
             REACH OUT &rarr;

@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap, prefersReducedMotion } from "../lib/gsap";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
-import { useSound } from "../lib/sound";
 import { BRAND, NAV_ITEMS } from "../data/content";
 import AhmadTitle from "../components/AhmadTitle";
 import ThreeBackground from "../components/ThreeBackground";
@@ -15,7 +14,6 @@ const QUICK = [
 export default function Home() {
   useDocumentTitle("Ahmad — Home");
   const root = useRef<HTMLElement>(null);
-  const { play } = useSound();
 
   useLayoutEffect(() => {
     const el = root.current;
@@ -79,10 +77,9 @@ export default function Home() {
           "-=0.3",
         );
 
-      play("title");
     }, el);
     return () => ctx.revert();
-  }, [play]);
+  }, []);
 
   return (
       <main
@@ -153,8 +150,6 @@ export default function Home() {
               <Link
                 key={q.to}
                 to={q.to}
-                onMouseEnter={() => play("hover")}
-                onMouseDown={() => play("click")}
                 className={[
                   "btn-retro px-6 py-3 text-sm",
                   q.kind === "red"
@@ -189,8 +184,6 @@ export default function Home() {
             <Link
               key={n.to}
               to={n.to}
-              onMouseEnter={() => play("hover")}
-              onMouseDown={() => play("click")}
               className="font-head text-xs tracking-[0.14em] text-cream hover:text-signyellow"
             >
               {n.label}

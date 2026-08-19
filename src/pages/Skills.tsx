@@ -1,9 +1,7 @@
 import Page from "../components/Page";
 import { SKILL_GROUPS, type SkillGroup } from "../data/content";
-import { useSound } from "../lib/sound";
 
 function Department({ group, index }: { group: SkillGroup; index: number }) {
-  const { play } = useSound();
   const flip = index % 2 === 1;
   return (
     <section
@@ -27,7 +25,6 @@ function Department({ group, index }: { group: SkillGroup; index: number }) {
           {group.items.map((item) => (
             <li key={item}>
               <span
-                onMouseEnter={() => play("hover")}
                 className="inline-block cursor-default border-2 border-ink bg-ink px-3 py-2 font-head text-sm tracking-[0.08em] text-cream transition-colors hover:bg-red hover:text-cream"
               >
                 {item}

@@ -21,12 +21,10 @@ import More from "./pages/More";
 
 import { useSmoothScroll, getLenis } from "./lib/useSmoothScroll";
 import { gsap, prefersReducedMotion } from "./lib/gsap";
-import { useSound } from "./lib/sound";
 
 export default function App() {
   useSmoothScroll();
   const location = useLocation();
-  const { play } = useSound();
 
   // Displayed route lags behind the real URL during the transition curtain.
   const [displayLocation, setDisplayLocation] = useState(location);
@@ -45,9 +43,6 @@ export default function App() {
       window.scrollTo(0, 0);
       return;
     }
-
-    play("transition");
-    play("navigation");
 
     const tl = gsap.timeline();
     tl.set(curtain, { transformOrigin: "top center", scaleY: 0 })

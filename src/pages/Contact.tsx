@@ -1,15 +1,12 @@
 import { useState, type SyntheticEvent } from "react";
 import Page from "../components/Page";
 import { CONTACT } from "../data/content";
-import { useSound } from "../lib/sound";
 
 export default function Contact() {
-  const { play } = useSound();
   const [sent, setSent] = useState(false);
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    play("transition");
     setSent(true);
   };
 
@@ -119,8 +116,6 @@ export default function Contact() {
                 </label>
                 <button
                   type="submit"
-                  onMouseEnter={() => play("hover")}
-                  onMouseDown={() => play("click")}
                   className="btn-retro w-full bg-red px-4 py-3 text-sm text-cream"
                 >
                   TRANSMIT →
