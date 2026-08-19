@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Page from "../components/Page";
-import AhmadTitle from "../components/AhmadTitle";
 import { ABOUT } from "../data/content";
+import ahmad from "../assets/ahmad.png";
 
 export default function About() {
   return (
@@ -16,28 +16,36 @@ export default function About() {
         </div>
 
         <div className="mt-8 grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
-          {/* portrait panel */}
-          <div data-anim className="relative">
-            <div className="relative border-4 border-ink bg-ink p-4 shadow-[8px_8px_0_var(--color-red)]">
-              <div className="grain halftone flex aspect-[4/5] items-center justify-center bg-ink">
-                <AhmadTitle
-                  as="div"
-                  text="A"
-                  size="xl"
-                  glow="red"
-                  tilt={-3}
-                  animate
-                  className="text-red"
-                />
+          {/* left column: portrait panel + action buttons */}
+          <div className="flex flex-col">
+            <div data-anim className="relative">
+              <div className="relative border-4 border-ink bg-ink p-4 shadow-[8px_8px_0_var(--color-red)]">
+                <div className="grain halftone flex aspect-[4/5] items-center justify-center overflow-hidden bg-ink">
+                  <img
+                    src={ahmad}
+                    alt="Ahmad"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="mt-3 flex items-center justify-between font-type text-[11px] tracking-[0.2em] text-signyellow">
+                  <span>SUBJECT</span>
+                  <span>AHMAD</span>
+                </div>
               </div>
-              <div className="mt-3 flex items-center justify-between font-type text-[11px] tracking-[0.2em] text-signyellow">
-                <span>SUBJECT</span>
-                <span>AHMAD</span>
-              </div>
+              <p className="mt-3 text-center font-head text-xs tracking-[0.2em] text-warmgray">
+                FILE PHOTO — STYLIZED
+              </p>
             </div>
-            <p className="mt-3 text-center font-head text-xs tracking-[0.2em] text-warmgray">
-              FILE PHOTO — STYLIZED
-            </p>
+
+            {/* action buttons aligned under the portrait */}
+            <div data-anim className="mt-6 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="btn-retro bg-ink px-6 py-3 text-sm text-cream"
+              >
+                REACH OUT →
+              </Link>
+            </div>
           </div>
 
           {/* profile copy */}
@@ -81,21 +89,6 @@ export default function About() {
               </ul>
             </div>
           </div>
-        </div>
-
-        <div data-anim className="mt-10 flex flex-wrap gap-4">
-          <Link
-            to="/projects"
-            className="btn-retro bg-red px-6 py-3 text-sm text-cream"
-          >
-            SEE THE WORK →
-          </Link>
-          <Link
-            to="/contact"
-            className="btn-retro bg-ink px-6 py-3 text-sm text-cream"
-          >
-            REACH OUT →
-          </Link>
         </div>
       </div>
     </Page>

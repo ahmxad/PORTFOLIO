@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { NAV_ITEMS, BRAND } from "../data/content";
 
 const TICKER = [
-  "NOW AIRING — THE AHMAD PORTFOLIO",
-  "FULL-STACK WEB DEVELOPMENT",
-  "MERN · RAILS · REST",
+  "THE AHMAD PORTFOLIO",
+  "FULL-STACK WEB DEVELOPER",
+  "MERN",
   "CERTIFIED ETHICAL HACKING (CEH)",
-  "BUILT BY HAND, NOT BY TEMPLATE",
-  "RED / YELLOW / BLACK — ALWAYS",
+  "Ruby on Rails",
+  "Python - JS - Ruby",
 ];
 
 export default function Footer() {
@@ -30,8 +30,7 @@ export default function Footer() {
             AHMAD
           </div>
           <p className="mt-3 max-w-xs font-body text-sm text-beige">
-            A developer portfolio with the energy of a vintage television
-            advertisement. Original work, honestly presented.
+            A developer portfolio inspired by Better Call Saul TV series.
           </p>
         </div>
 
