@@ -59,7 +59,7 @@ function Department({ group, index }: { group: SkillGroup; index: number }) {
 
 export default function Skills() {
   return (
-    <Page title="Ahmad — Skills" className="bg-cream text-ink" pad="pt-28 pb-20">
+    <Page title="Skills" className="bg-cream text-ink" pad="pt-28 pb-20">
       <div className="mx-auto max-w-6xl px-5">
         <div data-anim className="flex flex-wrap items-end justify-between gap-3 border-b-4 border-ink pb-3">
           <h1 className="font-display text-5xl uppercase leading-none text-ink sm:text-7xl">
