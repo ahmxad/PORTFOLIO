@@ -37,7 +37,7 @@ function Motif({ id }: { id: string }) {
           <div>
             <span className="text-signyellow">$</span> solve --challenge
           </div>
-          <div className="opacity-80">flag{"{"}capture_the_flag{"}"}</div>
+          <div className="break-all opacity-80">flag{"{"}capture_the_flag{"}"}</div>
           <div className="text-signyellow">› access granted</div>
         </div>
       );
@@ -178,10 +178,10 @@ function Motif({ id }: { id: string }) {
     case "anime":
       return (
         <div>
-          {/* manga page: panels with one speed-line "action" panel */}
-          <div className="grid grid-cols-2 gap-1 border-2 border-current p-1">
-            <div className="aspect-4/5 border border-current" />
-            <div className="relative aspect-4/5 overflow-hidden border border-current">
+          {/* manga page: 3 panels, one with a speed-line "action" burst */}
+          <div className="grid grid-cols-3 gap-1 border-2 border-current p-1">
+            <div className="aspect-square border border-current" />
+            <div className="relative aspect-square overflow-hidden border border-current">
               <div
                 className="absolute inset-0 opacity-70"
                 style={{
@@ -190,11 +190,10 @@ function Motif({ id }: { id: string }) {
                 }}
               />
               <div className="absolute inset-0 grid place-items-center">
-                <span className="font-display text-lg leading-none">★</span>
+                <span className="font-display text-base leading-none">★</span>
               </div>
             </div>
-            <div className="aspect-4/5 border border-current" />
-            <div className="aspect-4/5 border border-current" />
+            <div className="aspect-square border border-current" />
           </div>
           <div className="mt-2 flex items-end justify-between">
             <span className="font-display text-2xl uppercase leading-none">
@@ -254,9 +253,9 @@ const SPAN: Record<string, string> = {
 };
 
 const TITLE: Record<string, string> = {
-  lg: "text-5xl md:text-6xl",
-  md: "text-4xl",
-  sm: "text-2xl md:text-3xl",
+  lg: "text-4xl sm:text-5xl md:text-6xl",
+  md: "text-3xl sm:text-4xl",
+  sm: "text-2xl sm:text-3xl",
 };
 
 export default function More() {
@@ -271,7 +270,7 @@ export default function More() {
           className="flex flex-wrap items-end justify-between gap-3 border-b-4 border-ink pb-3"
         >
           <span className="stamp">OFF THE CLOCK</span>
-          <span className="font-type text-xs tracking-[0.25em] text-warmgray">
+          <span className="font-type text-[10px] tracking-[0.15em] text-warmgray sm:text-xs sm:tracking-[0.25em]">
             DOSSIER NO. 007 · BROADCAST SPECIAL
           </span>
         </div>
@@ -296,7 +295,7 @@ export default function More() {
         </p>
 
         {/* editorial mosaic — varied sizes, not an icon grid */}
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-12 md:gap-5">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:max-md:[&>*:last-child]:col-span-2 md:grid-cols-12 md:gap-5">
           {INTERESTS.map((it, i) => {
             const surface = SURFACE[it.id] ?? "bg-paper text-ink";
             const stampCls = STAMP[it.id] ?? "stamp";
@@ -307,9 +306,9 @@ export default function More() {
                 key={it.id}
                 data-anim
                 onMouseEnter={() => play("hover")}
-                className={`group relative flex flex-col justify-between border-4 border-ink p-4 shadow-[8px_8px_0_var(--color-ink)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--color-ink)] ${surface} ${span}`}
+                className={`group relative flex min-w-0 flex-col justify-between border-4 border-ink p-4 shadow-[8px_8px_0_var(--color-ink)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--color-ink)] ${surface} ${span}`}
               >
-                <div className="flex items-start justify-between gap-2">
+                <div className="flex min-w-0 items-start justify-between gap-2">
                   <span className={`${stampCls} max-w-[65%]`}>
                     {it.category}
                   </span>
@@ -324,7 +323,7 @@ export default function More() {
 
                 <div>
                   <h2
-                    className={`font-display uppercase leading-none ${titleCls}`}
+                    className={`font-display uppercase leading-none wrap-break-words ${titleCls}`}
                   >
                     {it.title}
                   </h2>
