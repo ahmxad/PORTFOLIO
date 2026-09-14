@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Page from "../components/Page";
 import { ABOUT } from "../data/content";
-import ahmad from "../assets/ahmad.png";
+import ahmad from "../assets/ahmad.webp";
 
 export default function About() {
   return (
