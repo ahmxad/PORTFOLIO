@@ -12,7 +12,7 @@ const QUICK = [
 ];
 
 export default function Home() {
-  useDocumentTitle("Ahmad — Home");
+  useDocumentTitle("Ahmad");
   const root = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {

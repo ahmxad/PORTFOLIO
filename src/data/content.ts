@@ -122,7 +122,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
         label: "Linux",
         items: ["Arch Linux", "Kali Linux", "Ubuntu", "Linux Mint", "CachyOS"],
       },
-      { label: "Desktop", items: ["KDE Plasma"] },
+      { label: "Desktop", items: ["KDE Plasma", "Windows 10, 11"] },
     ],
   },
   {
